@@ -9,13 +9,13 @@
 import UIKit
 
 // Question
-// Is there any difference between subclass UIViewController and conforming to protocol
+// Is there any difference between subclass UIViewController and conforming to protocol?
+// Yes, the first one in list is subclassing inheritance
+
+//UIAdaptivePresentationControllerDelegate
 
 class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate,
     UIPopoverPresentationControllerDelegate
-    
-//UIAdaptivePresentationControllerDelegate
-
 {
 
     // MARK: Properties
@@ -79,19 +79,17 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)
-//        dismissViewControllerAnimated(<#T##flag: Bool##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
         // the info dictionary contains multiple representations of the image and this uses the original
+        
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         photoImageView.image = selectedImage
         
         dismissViewControllerAnimated(true, completion: nil)
-        //        dismissViewControllerAnimated(<#T##flag: Bool##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-
     }
     
     
@@ -104,7 +102,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         let isPresentingInAddMode = presentingViewController is UINavigationController
         if isPresentingInAddMode {
             dismissViewControllerAnimated(true, completion: nil )
-            
         } else {
             navigationController?.popViewControllerAnimated(true)
         }

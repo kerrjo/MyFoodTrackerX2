@@ -35,13 +35,11 @@ class RatingControl: UIView {
 
             button.setImage(emptyStarImage, forState: .Normal)
             button.setImage(filledStarImage, forState: .Selected)
-            // Question:  square brackets
-            button.setImage(filledStarImage, forState: [.Selected,.Selected])
+            button.setImage(filledStarImage, forState: [.Highlighted,.Selected])
             button.adjustsImageWhenHighlighted = false
             
             button.addTarget(self, action: #selector(ratingButtonTapped), forControlEvents: .TouchDown)
             
-            // Question:  square brackets
             ratingButtons += [button]
             
             addSubview(button)
@@ -90,6 +88,5 @@ class RatingControl: UIView {
             // if the index of the button is less than the rating that button should be selected
             button.selected = index < rating
         }
-        
     }
 }

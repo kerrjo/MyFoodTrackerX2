@@ -44,7 +44,7 @@
 		5537DA1F1CB5B2E8005CD5E7 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 		5537DA211CB5B3B9005CD5E7 /* OverlayPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayPresentationController.swift; sourceTree = "<group>"; };
 		5537DA231CB5BEF5005CD5E7 /* OverlayTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayTransitioner.swift; sourceTree = "<group>"; };
-		556114AE1C86605F009EC13F /* FoodTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		556114AE1C86605F009EC13F /* FoodTrackerx2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodTrackerx2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		556114B11C86605F009EC13F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		556114B31C86605F009EC13F /* MealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		556114B61C86605F009EC13F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		556114AF1C86605F009EC13F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				556114AE1C86605F009EC13F /* FoodTracker.app */,
+				556114AE1C86605F009EC13F /* FoodTrackerx2.app */,
 				556114C21C86605F009EC13F /* FoodTrackerTests.xctest */,
 				556114CD1C86605F009EC13F /* FoodTrackerUITests.xctest */,
 			);
@@ -163,7 +163,7 @@
 			);
 			name = FoodTracker;
 			productName = FoodTracker;
-			productReference = 556114AE1C86605F009EC13F /* FoodTracker.app */;
+			productReference = 556114AE1C86605F009EC13F /* FoodTrackerx2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		556114C11C86605F009EC13F /* FoodTrackerTests */ = {
@@ -429,8 +429,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = joker.FoodTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = joker.FoodTracker.x2;
+				PRODUCT_NAME = "$(TARGET_NAME)x2";
 			};
 			name = Debug;
 		};
@@ -440,8 +440,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FoodTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = joker.FoodTracker;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = joker.FoodTracker.x2;
+				PRODUCT_NAME = "$(TARGET_NAME)x2";
 			};
 			name = Release;
 		};

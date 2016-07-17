@@ -8,9 +8,13 @@
 
 import UIKit
 
+/**
+ The viewController containing content on Overlay presentation
+ The overlay dimming view is already added to the containerview
+ */
+
 class OverlayViewController: UIViewController {
 
-    
     var foregroundContentView : UIVisualEffectView
     var backgroundView : UIVisualEffectView
     var blurEffect : UIBlurEffect
@@ -98,54 +102,28 @@ class OverlayViewController: UIViewController {
             options: NSLayoutFormatOptions(rawValue: 0),
             metrics: nil, views: views))
 
-//        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[label]-|",
-//            options: NSLayoutFormatOptions(rawValue: 0),
-//            metrics: nil, views: views))
-
-        
-        // Center
-//        [NSLayoutConstraint constraintWithItem:view
-//            attribute:NSLayoutAttributeCenterX
-//            relatedBy:NSLayoutRelationEqual
-//            toItem:view.superview
-//            attribute:NSLayoutAttributeCenterX
-//            multiplier:1.f constant:0.f];
-//        
         self.view.layoutIfNeeded()
 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
 
-
-//        NSDictionary* views = @{
-//            @"backgroundView" : [self backgroundView],
-//            @"foregroundContentView" : [self foregroundContentView],
-//            @"label1" : [self hueLabel],
-//            @"hueSlider" : [self hueSlider],
-//            @"saturationLabel" : [self saturationLabel],
-//            @"saturationSlider" : [self saturationSlider],
-//            @"brightnessLabel" : [self brightnessLabel],
-//            @"brightnessSlider" : [self brightnessSlider],
-//            @"saveButton" : [self saveButton],
-//            @"imageView" : [self imageView]
-//        };
+//        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[label]-|",
+//            options: NSLayoutFormatOptions(rawValue: 0),
+//            metrics: nil, views: views))
 
 
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[backgroundView]|" options:0 metrics:nil views:views]];
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[backgroundView]|" options:0 metrics:nil views:views]];
+// Center
+//        [NSLayoutConstraint constraintWithItem:view
+//            attribute:NSLayoutAttributeCenterX
+//            relatedBy:NSLayoutRelationEqual
+//            toItem:view.superview
+//            attribute:NSLayoutAttributeCenterX
+//            multiplier:1.f constant:0.f];
 //
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[foregroundContentScrollView]|" options:0 metrics:nil views:views]];
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[foregroundContentScrollView]|" options:0 metrics:nil views:views]];
-//
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[foregroundContentView]|" options:0 metrics:nil views:views]];
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[foregroundContentView]|" options:0 metrics:nil views:views]];
-//
-//        [[self view] addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(>=30)-[hueLabel]-[hueSlider]-[saturationLabel]-[saturationSlider]-[brightnessLabel]-[brightnessSlider]-[saveButton]-(>=10)-[imageView(==200)]|" options:0 metrics:nil views:views]];
-//
+
 

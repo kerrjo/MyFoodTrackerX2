@@ -8,18 +8,22 @@
 
 import UIKit
 
+
+/**
+ A presentation controller that manages the presentation of a viewController
+ Its customization will add a dimming view overthe entire container
+ and provide information for the contentView controller about its size
+ 
+ 
+ */
 class OverlayPresentationController: UIPresentationController {
     
     private var dimmingView : UIView?
     
-    
     override init( presentedViewController: UIViewController, presentingViewController: UIViewController) {
-        
         super.init(presentedViewController: presentedViewController, presentingViewController: presentingViewController)
-        
         prepareDimmingView()
     }
-    
     
     override func presentationTransitionWillBegin() {
         
@@ -29,37 +33,33 @@ class OverlayPresentationController: UIPresentationController {
             return
         }
         
-        // Make sure the dimming view is the size of the container's bounds, and fully transparent
+        // The dimming view is the size of the container's bounds, and fully transparent
 
         dv.alpha = 0.0
 
         if let presentationContainerView = self.containerView {
-            
             dv.frame = presentationContainerView.bounds
-
             // Insert the dimming view below everything else
-
             presentationContainerView.insertSubview(dv, atIndex: 0)
         }
         
-      
+        // Animate alongside or simple set the result
+        
         if let tc = presentedViewController.transitionCoordinator() {
-            
-            tc.animateAlongsideTransition({ (context: UIViewControllerTransitionCoordinatorContext) in
-                
+            tc.animateAlongsideTransition({
+                (context: UIViewControllerTransitionCoordinatorContext) in
                 dv.alpha = 1.0
-
                 }, completion: nil)
             
         } else {
-            
             dv.alpha = 1.0
         }
     }
 
     
     override func dismissalTransitionWillBegin() {
-        // undo what we did in -presentationTransitionWillBegin. Fade the dimming view to be fully transparent
+        
+        // undo what was done in -presentationTransitionWillBegin. Fade the dimming view to be fully transparent
 
         guard let dv = dimmingView else {
             return
@@ -67,14 +67,12 @@ class OverlayPresentationController: UIPresentationController {
 
         if let tc = presentedViewController.transitionCoordinator() {
             
-            tc.animateAlongsideTransition({ (context: UIViewControllerTransitionCoordinatorContext) in
-                
+            tc.animateAlongsideTransition({
+                (context: UIViewControllerTransitionCoordinatorContext) in
                 dv.alpha = 0.0
-                
                 }, completion: nil)
             
         } else {
-            
             dv.alpha = 0.0
         }
     }
@@ -98,12 +96,10 @@ class OverlayPresentationController: UIPresentationController {
         // Before layout, make sure our dimmingView and presentedView have the correct frame
         
         if let cv = self.containerView {
-        
-            self.dimmingView?.frame = cv.bounds
+            dimmingView?.frame = cv.bounds
         }
         
         if let pv = self.presentedView() {
-        
             pv.frame = frameOfPresentedViewInContainerView()
         }
     }
@@ -120,9 +116,7 @@ class OverlayPresentationController: UIPresentationController {
         var presentedViewFrame = CGRectZero;
 
         if let cv = self.containerView {
-            
             presentedViewFrame.size = sizeForChildContentContainer(cv.bounds.size)
-            
             presentedViewFrame.origin.x = cv.bounds.size.width - presentedViewFrame.size.width;
         }
         
@@ -130,20 +124,17 @@ class OverlayPresentationController: UIPresentationController {
     }
 
     
-    // MARK: dimming view init
+    // MARK: dimming view
     
     func prepareDimmingView() {
         
         let dv = UIView()
-        
         dv.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.35)
         dv.alpha = 0.0
-        
         let tapRec = UITapGestureRecognizer(target: self, action: #selector(dimmingViewTapped))
-        
-        dimmingView = dv
-        
         dv.addGestureRecognizer(tapRec)
+        dimmingView = dv
+
     }
     
     

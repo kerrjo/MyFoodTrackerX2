@@ -19,7 +19,6 @@ class OverlayAnimatedTransitioning : NSObject, UIViewControllerAnimatedTransitio
     }
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
-
         return 0.25;
     }
 
@@ -170,6 +169,7 @@ class OverlayAnimatedTransitioning : NSObject, UIViewControllerAnimatedTransitio
 class OverlayTransitioningDelegate : NSObject, UIViewControllerTransitioningDelegate {
     
     // ios8
+    
     func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController? {
         
         print(#function)
@@ -182,6 +182,7 @@ class OverlayTransitioningDelegate : NSObject, UIViewControllerTransitioningDele
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         print(#function)
+        
         let ac = OverlayAnimatedTransitioning(isPresenting: true)
         
         return ac
@@ -190,6 +191,7 @@ class OverlayTransitioningDelegate : NSObject, UIViewControllerTransitioningDele
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
 
         print(#function)
+        
         let ac = OverlayAnimatedTransitioning(isPresenting: false)
         
         return ac

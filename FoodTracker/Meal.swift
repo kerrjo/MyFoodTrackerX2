@@ -19,6 +19,7 @@ class Meal: NSObject, NSCoding {
     var rating : Int
     
     // MARK: Archiving paths
+    
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("meals")
     
@@ -44,14 +45,12 @@ class Meal: NSObject, NSCoding {
         }
     }
     
-    
     // MARK: NSCoding
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: propertyKey.nameKey)
         aCoder.encodeObject(photo, forKey: propertyKey.photoKey)
         aCoder.encodeInteger(rating, forKey: propertyKey.ratingKey)
-        
     }
     
     required convenience init?(coder aDecoder: NSCoder) {
