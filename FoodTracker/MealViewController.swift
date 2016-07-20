@@ -128,69 +128,51 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
 
         // Did Tap
         
+
+        //demoOverlayView()
+        
+        demoPopOverView()
+        
+        
+     }
+    
+    
+    func demoOverlayView() {
         let overlay = OverlayViewController()
         
         mmTransitioningDelegate = OverlayTransitioningDelegate()
-
+        
         overlay.transitioningDelegate = mmTransitioningDelegate
         
         presentViewController(overlay, animated: true, completion: nil)
         
-        
-        // Change our transitioning delegate based on whether or not the presentation should be awesome
-//        
-//        if([self presentationShouldBeAwesome])
-//        {
-//            _transitioningDelegate = [[AAPLCoolTransitioningDelegate alloc] init];
-//        }
-//        else
-//        {
-//            _transitioningDelegate = [[AAPLOverlayTransitioningDelegate alloc] init];
-//        }
-        
-//        [overlay setTransitioningDelegate:[self transitioningDelegate]];
-//        AAPLPhotoCollectionViewCell *selectedCell = (AAPLPhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//        [overlay setPhotoView:selectedCell];
-//        [self presentViewController:overlay animated:YES completion:NULL];
-        
-        
-        
-        // Another IMPL
-        
-//        let vc = ContentPopOverViewController()
-//        vc.modalPresentationStyle = .Popover
-//        
-////        var pc = vc.popoverPresentationController
-////        if pc != nil {
-////            pc!.permittedArrowDirections = .Any
-////            pc!.delegate = self
-////        }
-//
-//        if let pc = vc.popoverPresentationController {
-//            pc.permittedArrowDirections = .Any
-//            pc.delegate = self
-//            
-////            pc.sourceView = photoImageView
-//        }
-//
-//        //        vc.preferredContentSize = CGSize(width: 100,height: 100)
-//
-//        presentViewController(vc, animated: true, completion: nil)
-        
-        
-        
-//        // Select Image inline
-        
-//        nameTextField.resignFirstResponder()
-//        let imagePickerController = UIImagePickerController()
-//        // only allow photos, not taken
-//        imagePickerController.sourceType = .PhotoLibrary
-//        imagePickerController.delegate = self
-//        
-//        presentViewController(imagePickerController, animated: true, completion: nil)
-////        presentViewController(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
-        
     }
+
+    func demoPopOverView() {
+
+     //Another IMPL
+    
+            let vc = ContentPopOverViewController()
+            vc.modalPresentationStyle = .Popover
+    
+    //        var pc = vc.popoverPresentationController
+    //        if pc != nil {
+    //            pc!.permittedArrowDirections = .Any
+    //            pc!.delegate = self
+    //        }
+    
+            if let pc = vc.popoverPresentationController {
+                pc.permittedArrowDirections = .Any
+                pc.delegate = self
+    
+    //            pc.sourceView = photoImageView
+            }
+    
+            //        vc.preferredContentSize = CGSize(width: 100,height: 100)
+    
+            presentViewController(vc, animated: true, completion: nil)
+    }
+
     
     
     // MARK: presentation controller delegate
@@ -223,7 +205,6 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
 }
 
 
-
 // --------------------------
 
 
@@ -242,4 +223,63 @@ class ContentPopOverViewController: UIViewController {
     }
     
 }
+
+
+
+
+
+// Change our transitioning delegate based on whether or not the presentation should be awesome
+//
+//        if([self presentationShouldBeAwesome])
+//        {
+//            _transitioningDelegate = [[AAPLCoolTransitioningDelegate alloc] init];
+//        }
+//        else
+//        {
+//            _transitioningDelegate = [[AAPLOverlayTransitioningDelegate alloc] init];
+//        }
+
+//        [overlay setTransitioningDelegate:[self transitioningDelegate]];
+//        AAPLPhotoCollectionViewCell *selectedCell = (AAPLPhotoCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//        [overlay setPhotoView:selectedCell];
+//        [self presentViewController:overlay animated:YES completion:NULL];
+
+
+
+// Another IMPL
+
+//        let vc = ContentPopOverViewController()
+//        vc.modalPresentationStyle = .Popover
+//
+////        var pc = vc.popoverPresentationController
+////        if pc != nil {
+////            pc!.permittedArrowDirections = .Any
+////            pc!.delegate = self
+////        }
+//
+//        if let pc = vc.popoverPresentationController {
+//            pc.permittedArrowDirections = .Any
+//            pc.delegate = self
+//
+////            pc.sourceView = photoImageView
+//        }
+//
+//        //        vc.preferredContentSize = CGSize(width: 100,height: 100)
+//
+//        presentViewController(vc, animated: true, completion: nil)
+
+
+
+//        // Select Image inline
+
+//        nameTextField.resignFirstResponder()
+//        let imagePickerController = UIImagePickerController()
+//        // only allow photos, not taken
+//        imagePickerController.sourceType = .PhotoLibrary
+//        imagePickerController.delegate = self
+//
+//        presentViewController(imagePickerController, animated: true, completion: nil)
+////        presentViewController(<#T##viewControllerToPresent: UIViewController##UIViewController#>, animated: <#T##Bool#>, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
+
+
 
