@@ -111,15 +111,13 @@
 		556114B01C86605F009EC13F /* FoodTracker */ = {
 			isa = PBXGroup;
 			children = (
+				556114B11C86605F009EC13F /* AppDelegate.swift */,
 				5561156B1C88CECF009EC13F /* Meal.swift */,
 				5561155F1C87DC2B009EC13F /* RatingControl.swift */,
 				556114B31C86605F009EC13F /* MealViewController.swift */,
 				556115651C87F84E009EC13F /* MealTableViewCell.swift */,
 				556115671C8800E9009EC13F /* MealTableViewController.swift */,
-				5537DA231CB5BEF5005CD5E7 /* OverlayTransitioner.swift */,
-				5537DA1F1CB5B2E8005CD5E7 /* OverlayViewController.swift */,
-				5537DA211CB5B3B9005CD5E7 /* OverlayPresentationController.swift */,
-				556114B11C86605F009EC13F /* AppDelegate.swift */,
+				55E4106E1D3FE8B500EAA4A3 /* OverlayPresentation */,
 				556114B51C86605F009EC13F /* Main.storyboard */,
 				556114B81C86605F009EC13F /* Assets.xcassets */,
 				556114BA1C86605F009EC13F /* LaunchScreen.storyboard */,
@@ -144,6 +142,16 @@
 				556114D31C86605F009EC13F /* Info.plist */,
 			);
 			path = FoodTrackerUITests;
+			sourceTree = "<group>";
+		};
+		55E4106E1D3FE8B500EAA4A3 /* OverlayPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				5537DA231CB5BEF5005CD5E7 /* OverlayTransitioner.swift */,
+				5537DA1F1CB5B2E8005CD5E7 /* OverlayViewController.swift */,
+				5537DA211CB5B3B9005CD5E7 /* OverlayPresentationController.swift */,
+			);
+			name = OverlayPresentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
